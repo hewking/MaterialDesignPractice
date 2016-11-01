@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:padding="3dp" >
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="40dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="4dp"
+        android:src="@drawable/back"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:clickable="true"
+        android:focusable="true" />
+    <!--
+    <TextView
+        android:id="@+id/tv_battery"
+        android:layout_width="40dp"
+        android:layout_height="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/battery"
+        android:paddingRight="4dp"
+        android:gravity="center"
+        android:text="100"
+        android:textColor="#fff"
+        android:textSize="10sp">
+    </TextView>
+    -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:focusable="true"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/btn_pause"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:clickable="true"
+            android:focusable="true" >
+        </Button>
+        <!--
+        <FrameLayout
+            android:id="@+id/fl_switch_mode2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/btn_switch_mode_bg"
+            android:clickable="true" 
+            android:focusable="true">
+
+            <Button
+                android:id="@+id/btn_switch_mode2"
+                android:layout_width="20dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:background="@drawable/circle_full_screen" 
+                android:clickable="false"/>
+        </FrameLayout>
+        -->
+
+        <Button
+            android:id="@+id/btn_switch_mode"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/mode_3d"
+            android:clickable="true"
+            android:focusable="true" >
+        </Button>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="55dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_play_left_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="#fff"
+            android:textSize="12sp" />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:focusable="false" />
+        <!--
+        <TextView
+            android:id="@+id/tv_play_right_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="总时间"
+            android:textColor="#fff"
+            android:textSize="12sp"
+            android:visibility="gone" />
+        -->
+    </LinearLayout>
+
+</RelativeLayout>
