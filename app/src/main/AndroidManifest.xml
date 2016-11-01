@@ -15,6 +15,46 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--<activity-->
+            <!--android:name="com.dlodlo.player.DvrVideoActivity"-->
+            <!--android:configChanges="orientation|keyboardHidden"-->
+            <!--android:label="@string/app_name"-->
+            <!--android:launchMode="singleTask"-->
+            <!--android:screenOrientation="landscape" >-->
+
+
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+                <!--<category android:name="com.google.intent.category.CARDBOARD" />-->
+                <!--<category android:name="android.intent.category.HOME" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+
+            <!--</intent-filter>-->
+
+            <!--&lt;!&ndash;    <intent-filter>-->
+                   <!--<action android:name="android.intent.action.VIEW" />-->
+                   <!--<action android:name="dlodlo.intent.action.vrplayer" />-->
+                   <!--<action android:name="android.intent.action.MAIN" />-->
+
+                   <!--<category android:name="android.intent.category.LAUNCHER" />-->
+                   <!--<category android:name="android.intent.category.BROWSABLE" />-->
+
+                   <!--<data android:mimeType="video/*" />-->
+
+                   <!--<category android:name="com.google.intent.category.CARDBOARD" />-->
+                   <!--<category android:name="android.intent.category.DEFAULT" />-->
+               <!--</intent-filter> &ndash;&gt;-->
+        <!--</activity>-->
+
+        <meta-data
+            android:name="IMMERSIVE_MODE"
+            android:value="true" />
+
     </application>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
