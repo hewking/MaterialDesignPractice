@@ -5,11 +5,13 @@ package com.example.leetcode;
  * <p>
  * 联系方式：。。。
  */
-public class ReverseLinkedList {
+public class ReverseLinkedList<T> {
+
+    private int size;
 
 
     public static void main(String[] args){
-        ReverseLinkedList linkedList = new ReverseLinkedList();
+        ReverseLinkedList linkedList = new ReverseLinkedList<Integer>();
         linkedList.push(1);
         linkedList.push(2);
         linkedList.push(3);
@@ -25,20 +27,25 @@ public class ReverseLinkedList {
 
     ListNode head;
 
-    ReverseLinkedList(){
+    public ReverseLinkedList(){
         head = null;
     }
 
-    public void push(int x){
+    public void push(T x){
         if(head == null){
-            head = new ListNode(x);
-            ListNode nextNode = new ListNode(x);
+            head = new ListNode<T>(x);
+            ListNode nextNode = new ListNode<>(x);
             head.next = nextNode;
             return;
         }
-        ListNode listNode = new ListNode(x);
+        ListNode listNode = new ListNode<T>(x);
         listNode.next = head.next;
         head.next = listNode;
+        size ++;
+    }
+
+    public int getSize(){
+        return size;
     }
 
     /**
@@ -62,10 +69,17 @@ public class ReverseLinkedList {
         return node;
     }
 
-    public class ListNode{
-        int val;
+    public T get(int index){
+        ListNode<T> x = head;
+        for (int i = 0; i < index; i++)
+            x = x.next;
+        return x.val;
+    }
+
+    public static class ListNode<T>{
+        T val;
         ListNode next;
-        ListNode(int x){val = x;}
+        ListNode(T x){val = x;}
     }
 
 }
