@@ -1,10 +1,10 @@
-package com.dlodlo.materialdesignpractice.ui;
+package com.dlodlo.mdpractice.ui;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.dlodlo.materialdesignpractice.R;
+import com.dlodlo.mdpractice.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

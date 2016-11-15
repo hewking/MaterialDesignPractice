@@ -1,4 +1,4 @@
-package com.dlodlo.materialdesignpractice;
+package com.dlodlo.mdpractice;
 
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
-import com.dlodlo.materialdesignpractice.net.client.OkHttpManager;
+import com.dlodlo.mdpractice.net.client.OkHttpManager;
 
 import java.io.IOException;
 

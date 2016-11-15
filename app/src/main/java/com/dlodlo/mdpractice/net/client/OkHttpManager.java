@@ -1,4 +1,4 @@
-package com.dlodlo.materialdesignpractice.net.client;
+package com.dlodlo.mdpractice.net.client;
 
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;

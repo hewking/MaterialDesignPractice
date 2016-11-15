@@ -1,4 +1,4 @@
-package com.dlodlo.materialdesignpractice;
+package com.dlodlo.mdpractice;
 
 import org.junit.Test;
 

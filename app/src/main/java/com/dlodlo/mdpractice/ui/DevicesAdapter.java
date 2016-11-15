@@ -1,4 +1,4 @@
-package com.dlodlo.materialdesignpractice.ui;
+package com.dlodlo.mdpractice.ui;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
