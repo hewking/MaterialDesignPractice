@@ -1,4 +1,4 @@
-package com.example;
+package com.example.algorithm;
 
 public class QuickSort {
 
@@ -26,7 +26,7 @@ public class QuickSort {
     }
 
     public static int partition(int left, int right, int[] arr) {
-        //悲伤的股市 不知道为啥我要这样写 还看不懂代码 。。我说怎么这么奇怪
+        //悲伤的故事 不知道为啥我要这样写 还看不懂代码 。。我说怎么这么奇怪
 //        int k = left;
 //        while(left < right){
 //            while(left < right && arr[right] >= arr[k])
