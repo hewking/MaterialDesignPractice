@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 //        tv = (TextView)findViewById(R.id.tv);
 
+
         OkHttpManager.getInstance().getString("http://con.dlodlo.com/android/resource/v2/listDevice", new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
