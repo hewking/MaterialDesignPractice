@@ -4,6 +4,8 @@
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tencent.tinker/bsdiff-util/1.7.5/491e9b9876ef5dde3b1b6ff248d6e5a6e5982d85/bsdiff-util-1.7.5.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tencent.tinker/bsdiff-util/1.7.5/50c5fdce019c60e0a95721518e0ddd7b36987c52/bsdiff-util-1.7.5-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

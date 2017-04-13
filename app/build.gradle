@@ -10,6 +10,10 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.android.support:recyclerview-v7:23.0.1'
     compile 'com.jakewharton:butterknife:8.4.0'
+
+    compile 'org.jsoup:jsoup:1.10.2'
+
+
     compile("com.tencent.tinker:tinker-android-lib:1.7.5") { changing = true }
     provided("com.tencent.tinker:tinker-android-anno:1.7.5") { changing = true }
 

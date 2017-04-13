@@ -4,6 +4,8 @@
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tencent.tinker/aosp-dexutils/1.7.5/61f8959c86a873816be0a97264e1bff8cf5be81c/aosp-dexutils-1.7.5.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tencent.tinker/aosp-dexutils/1.7.5/95ac3f28ad0b16732a41d7e48501518744ec7ba9/aosp-dexutils-1.7.5-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

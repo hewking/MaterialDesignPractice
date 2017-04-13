@@ -4,6 +4,8 @@
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tencent.tinker/tinker-commons/1.7.5/8510eead1e89271a63ebe12119c1f7a84ca7cc1/tinker-commons-1.7.5.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tencent.tinker/tinker-commons/1.7.5/bdfb839db04005c4b9f2f15b3ce45d75397c9683/tinker-commons-1.7.5-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

@@ -14,11 +14,16 @@
         </activity>
         <service android:name=".service.LocalService"/>
         <activity android:name="com.dlodlo.app.MainActivity">
+
+        </activity>
+
+        <activity android:name=".activity.SharedReceiverActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <!--<activity-->
             <!--android:name="com.dlodlo.player.DvrVideoActivity"-->
