@@ -4,6 +4,8 @@ import android.os.AsyncTask;
 import android.os.SystemClock;
 import android.util.Log;
 
+import org.jsoup.Jsoup;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -51,6 +53,8 @@ public class HtmlFrom {
                 regexMatch(s,IMAGE_TAG_PATTERN);
                 regexMatch(s,"<title>(.*?)</title>");
 
+
+
             }
 
             @Override
@@ -65,6 +69,19 @@ public class HtmlFrom {
         Matcher matcher = compile.matcher(content);
         if (matcher.find()) {
             Log.e("regexmatch",matcher.group(0));
+            Matcher m = Pattern.compile("<title>([\\s\\S]*)</title>").matcher(matcher.group(0));
+            Matcher m2 = Pattern.compile("<img.*?\"([\\s\\S]*)\" alt.*?>").matcher(matcher.group(0));
+
+            String attr = Jsoup.parse(matcher.group(0)).select("img").attr("src");
+            String title = Jsoup.parse(matcher.group(0)).select("title").text();
+            Log.e("regexmatch jsoup after",attr);
+            Log.e("regexmatch jsoup title",title);
+
+            while(m2.find()){
+//                System.out.println(m.group(1));
+                Log.e("regexmatch after",m2.group(1));
+
+            }
         }
     }
 

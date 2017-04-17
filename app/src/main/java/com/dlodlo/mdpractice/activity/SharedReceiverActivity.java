@@ -44,7 +44,7 @@ public class SharedReceiverActivity extends AppCompatActivity {
         setContentView(R.layout.activity_share_receiver);
         initView();
 
-        HtmlFrom.getPageAsyc("https://www.taobao.com/");
+        HtmlFrom.getPageAsyc("https://www.baidu.com/");
 
     }
     TextView content;

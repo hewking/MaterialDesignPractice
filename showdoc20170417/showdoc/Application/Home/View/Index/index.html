@@ -1,0 +1,51 @@
+<include file="Common/header" />
+<link rel="stylesheet" href="__PUBLIC__/css/index.css" />
+
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <if condition="$login_user">
+            <li ><a href="{:U('Home/Item/index')}">我的项目</a></li>
+            <else />
+            <li ><a href="{:U('Home/User/login')}">登录/注册</a></li>
+          </if>
+          
+        </ul>
+        <h3 class="muted">ShowDoc</h3>
+      </div>
+
+      <hr>
+
+<!-- 		<p class="lead " > 
+			<small>
+				ShowDoc是一个在线文档编辑与展示的网站。通过它，你可以上天入地无所不能，前无古人后无来者，顶天立地无所畏惧，八仙归海众神归位，排山倒海浩浩荡荡，从此你再也不用担心吃药的时候没有勺子，也不用担心打字的时候没有墨鱼，一切尽在你的掌控之中。去吧比卡丘！让那些愚蠢的人类都亮瞎眼！！！
+			</small>
+		</p> -->
+		<!--
+		<p class="text-center">
+			<a class="btn btn-primary  btn-large" href="{:U('Home/item/show').'?item_id=2'}" target="_blank">Demo</a>
+			<a class="btn  btn-large" href="{:U('Home/item/show').'?item_id=3'}" target="_blank" >帮助教程&nbsp;<i class="icon-circle-arrow-right"></i></a>
+		</p>
+		-->
+		<p >
+			<foreach name="item_list" item="v" >
+			<a class="btn btn-primary  btn-large" href="{:U('Home/item/show')}?item_id={$v.item_id}" target="_blank">{$v.item_name}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			</foreach>
+		</p>
+      <hr>
+
+
+      <div class="footer">
+        <p>&copy; Created By <a href="http://blog.star7th.com/" target="_blank"> Star7th</a></p>
+      </div>
+
+    </div> <!-- /container -->
+
+
+ <include file="Common/footer" />
+ <script type="text/javascript">
+
+    $("#myCarousel").carousel('cycle');
+
+ </script>
