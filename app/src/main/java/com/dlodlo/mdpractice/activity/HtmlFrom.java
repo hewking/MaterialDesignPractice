@@ -1,14 +1,11 @@
 package com.dlodlo.mdpractice.activity;
 
 import android.os.AsyncTask;
-import android.os.SystemClock;
 import android.util.Log;
 
 import org.jsoup.Jsoup;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -94,7 +91,7 @@ public class HtmlFrom {
         HttpURLConnection connection = null;
         InputStream is = null;
 
-        ByteArrayOutputStream fos = null;
+        ByteArrayOutputStream fos = new ByteArrayOutputStream();
 
         try {
             URL url = new URL(surl);
@@ -104,7 +101,6 @@ public class HtmlFrom {
             if (HttpURLConnection.HTTP_OK == code) {
                 connection.connect();
                 is = connection.getInputStream();
-                fos = new ByteArrayOutputStream();
 
                 int i;
                 while((i = is.read()) != -1){
