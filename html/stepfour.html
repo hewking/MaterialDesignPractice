@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta content="width=device-width, initial-scale=0.5, maximum-scale=0.5,  user-scalable=0;" name="viewport" />
+    <met5496 name="Keywords" content=""/>
+    <meta name="author" content=""/>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+   	<script src="assets/js/flexible.js"></script>
+	<title>还款银行卡</title>
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+	<div class="main">
+		<!-- 内容模块 -->
+		<div class="main-body">
+			<!-- 还款银行卡 -->
+			<div class="verify-user bank-card">
+				<form action="" id="verifycard">
+					<ul>
+						<li class="clearfix">
+							<div class="clearfix info-block">	
+								<dd class="icon"><img src="assets/images/icon_name.png" alt=""></dd>
+								<dd class="con-title">持卡人姓名</dd>
+								<dd class="input-box bank-user">王先生</dd>
+								<input type="hidden" name="real_name" id="real_name">
+							</div>
+						</li>
+						<li class="clearfix">
+							<div class="clearfix info-block">
+								
+								<dd class="icon"><img src="assets/images/icon_bank@2x.png" alt=""></dd>
+								<dd class="con-title">发卡银行</dd>
+								<dd class="input-box"><input type="text" id="bank_name" name="bank_name" placeholder="请输入您的发卡银行"></dd>
+							</div>
+						</li>
+						<li class="clearfix">
+							<div class="clearfix info-block">
+								
+								<dd class="icon"><img src="assets/images/icon_bank@2x.png" alt=""></dd>
+								<dd class="con-title">储蓄卡号</dd>
+								<dd class="input-box"><input type="text" id="bank_card" name="bank_card" placeholder="请输入您的储蓄卡号"></dd>
+							</div>
+						</li>
+						<li class="">
+							<div class="clearfix msg-word">
+								<p>
+									<input type="checkbox" name="agree" id="agree" checked="">
+									<img src="assets/images/btn_check_s@2x.png" alt="">
+								</p>
+								<span>已阅读并同意<a href="#">《委托代扣协议》</a></span>
+							</div>
+							
+							
+						</li>
+					</ul>
+					<button type="submit">
+						确定
+					</button>
+				</form>
+				
+			</div>
+		
+		</div>
+
+	</div>
+	
+	<script src="assets/js/jquery-2.1.4.min.js"></script>
+	<script src="assets/js/base.js"></script>
+	<script src="assets/js/baseApp.js"></script>
+	
+	<script src="assets/js/flexible.js"></script>
+	<script src="assets/js/jquery.form.js"></script>
+	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="assets/js/formvaliate.js"></script>
+	<script>
+		$(function() {
+			$.ajax({
+				"url":"/restful/getCustomerBankInformation",
+				"headers": { "authorization": localStorage.getItem("auth_token") },
+				"dataType":"json",
+				"type":"GET",
+				success:function(data){
+					$(".bank-user").text(data.realName);
+					$("#real_name").val(data.realName);
+					$("#bank_name").val(data.bankName);
+					$("#bank_card").val(data.bankCard);
+
+				},
+				error:function(){
+					M.layer("请求失败",1000);
+				}
+			})
+		})
+	</script>
+</body>
+</html>

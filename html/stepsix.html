@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta content="width=device-width, initial-scale=0.5, maximum-scale=0.5,  user-scalable=0;" name="viewport" />
+    <met5496 name="Keywords" content=""/>
+    <meta name="author" content=""/>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+    <script src="assets/js/flexible.js"></script>
+	<title>紧急联系人</title>
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+	<div class="main">
+		<!-- 内容模块 -->
+		<div class="main-body">
+			
+			<!-- 紧急联系人方式 -->
+			<div class="verify-user emergency-con">
+				<form action="" id="shipInfo">
+					<div class="user-info">
+						<ul class="clearfix show-list">
+								<li class="clearfix">
+									<div class="clearfix info-block">
+										<dd class="con-title">与本人关系</dd>
+										<dd class="change-btn ship-change" data-num="0" data-ship=""><p data-ship="">请选择与本人的关系[父亲/母亲]</p><input type="hidden" value="" name="shipOne" id="shipOne" class="data1 username"></dd>
+										<dd class="city-r">
+											<img src="assets/images/icon_next@2x.png" alt="">
+										</dd>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="clearfix info-block">
+										<dd class="con-title">姓名</dd>
+										<dd class="input-box"><input type="text" id="parentname" name="parentname" placeholder="请输入紧急联系人姓名" class="data2"></dd>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="clearfix info-block">
+										<dd class="con-title">手机</dd>
+										<dd class="input-box"><input type="text" id="phone" name="phone" placeholder="请输入紧急联系人联系电话" class="data3"></dd>
+									</div>
+								</li>
+							<!-- <div class="del-btn"></div> -->
+							
+						</ul>
+						<ul class="show-list">
+							<li class="clearfix">
+								<div class="clearfix info-block">
+									<dd class="con-title">与本人关系</dd>
+									<dd class="change-btn ship-change" data-num="1" data-ship="">
+										<p data-ship="">请选择与本人的关系</p>
+										<input type="hidden" value="" name="shipTwo" id="shipTwo" class="data1 username" >
+									</dd>
+									<dd class="city-r">
+										<img src="assets/images/icon_next@2x.png" alt="">
+									</dd>
+								</div>
+							</li>
+							<li class="clearfix">
+								<div class="clearfix info-block">
+									<dd class="con-title">姓名</dd>
+									<dd class="input-box"><input type="text" id="parenttwo" name="parenttwo" placeholder="请输入紧急联系人姓名" class="data2"></dd>
+								</div>
+							</li>
+							<li class="clearfix">
+								<div class="clearfix info-block">
+									<dd class="con-title">手机</dd>
+									<dd class="input-box"><input type="text" id="phonetwo" name="phonetwo" placeholder="请输入紧急联系人联系电话" class="data3"></dd>
+								</div>
+							</li>
+						</ul>
+						<ul class="show-list">
+							<li class="clearfix">
+								<div class="clearfix info-block">
+									<dd class="con-title">与本人关系</dd>
+									<dd class="change-btn ship-change" data-num="1" data-ship="母亲">
+										<p data-ship="">请选择与本人的关系</p><input type="hidden" value="" name="shipThere" id="shipThere" class="data1 username">
+									</dd>
+									
+									<dd class="city-r">
+										<img src="assets/images/icon_next@2x.png" alt="">
+									</dd>
+								</div>
+							</li>
+							<li class="clearfix">
+								<div class="clearfix info-block">
+									<dd class="con-title">姓名</dd>
+									<dd class="input-box"><input type="text" id="parentthere" name="parentthere" placeholder="请输入紧急联系人姓名" class="data2"></dd>
+								</div>
+							</li>
+							<li class="clearfix">
+								<div class="clearfix info-block">
+									<dd class="con-title">手机</dd>
+									<dd class="input-box"><input type="text" id="phonethere" name="phonethere" placeholder="请输入紧急联系人联系电话" class="data3"></dd>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<ul>
+						<li class="clearfix add-people">
+							<div class="clearfix info-block">
+								<p class="moreship">添加更多联系人</p>
+								<dd class="city-r">
+									<img src="assets/images/icon_more@2x.png" alt="">
+								</dd>
+							</div>
+					</ul>
+					<button type="submit" id="contentAjax">
+						确定
+					</button>
+				</form>
+			</div>
+			
+		</div>
+
+	</div>
+	
+	<script src="assets/js/jquery-2.1.4.min.js"></script>
+	<script src="assets/js/base.js"></script>
+	<script src="assets/js/jquery.form.js"></script>
+	<script src="assets/js/jquery.validate.js"></script>
+	<script src="assets/js/baseApp.js"></script>
+	<script>
+		$(function(){
+			//动态表单验证
+			    $.ajax({
+			    	"url": "/restful/contactPersonByCustomerId",
+			    	"type": "GET",
+			    	"dataType": "json",
+			    	"headers": { "authorization": localStorage.getItem("auth_token") },
+			    	"success": function (data) {
+			    		
+			    		// console.log("kkk",data);
+			    		var tpl = '';
+			    		if(data.length == 0){
+			    			return;
+			    		}else{
+
+			    			$(".user-info").empty();
+			    		for(var i=0;i<data.length;i++){
+			    			console.log(i)
+			    			tpl += '<ul class="show-list">\
+			    			<li class="clearfix">\
+								<div class="clearfix info-block">\
+									<dd class="con-title">与本人关系</dd>';
+									if(i==0){
+										tpl += '<dd class="change-btn ship-change"\
+										data-num="0" data-ship="">';
+									}else{
+										tpl += '<dd class="change-btn ship-change"\
+										data-num="1" data-ship="">';
+									}
+					tpl += '<p data-ship="'+data[i].relation+'">'+data[i].relation+'</p>\
+		<input type="hidden" value="" name="parentship" id="" class="data1"></dd>\
+									<dd class="city-r">\
+										<img src="assets/images/icon_next@2x.png" alt="">\
+									</dd>\
+								</div>\
+							</li>\
+							<li class="clearfix">\
+								<div class="clearfix info-block">\
+									<dd class="con-title">姓名</dd>\
+									<dd class="input-box">\
+<input type="text" id="parenttwo" name="parenttwo" placeholder="请输入紧急联系人姓名" class="data2" value="'+data[i].name+'">\
+</dd>\
+								</div>\
+							</li>\
+							<li class="clearfix">\
+								<div class="clearfix info-block">\
+									<dd class="con-title">手机</dd>\
+									<dd class="input-box">\
+<input type="text" id="phone" name="phone" placeholder="请输入紧急联系人联系电话"\
+class="data3" value="'+data[i].mobilePhone+'"></dd>\
+								</div>\
+							</li>\
+			    			</ul>';
+			    		}
+			    		$(".user-info").append($(tpl))
+			    	}
+			    	},
+
+			    })
+		})
+	</script>
+	<script src="assets/js/formvaliate.js"></script>
+</body>
+</html>

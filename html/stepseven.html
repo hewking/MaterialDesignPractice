@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta content="width=device-width, initial-scale=0.5, maximum-scale=0.5,  user-scalable=0;" name="viewport" />
+    <met5496 name="Keywords" content=""/>
+    <meta name="author" content=""/>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+   	<script src="assets/js/flexible.js"></script>
+	<title>教育程度</title>
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+	<div class="main">
+		<!-- 内容模块 -->
+		<div class="main-body">
+			
+			<!--教育程度 -->
+			<div class="verify-user education-level">
+				<form action="" id="eduInfo">
+					<ul class="edublock">
+						<li class="clearfix">
+							<div class="clearfix info-block">
+								<dd class="con-title">教育程度</dd>
+								<dd class="change-btn ship-change" data-num="2">
+									<p data-ship="">请选择教育程度</p>
+									<input type="hidden" placeholder="请选择教育程度" id="educational" name="educational" value="">
+								</dd>
+								<dd class="city-r">
+									<img src="assets/images/icon_next@2x.png" alt="">
+								</dd>
+							</div>
+						</li>
+						<li class="clearfix">
+							<div class="clearfix info-block">
+								<dd class="con-title">录取方式</dd>
+								<dd class="change-btn ship-change" data-num="3">
+									<p data-ship="">请选择录取方式</p>
+									<input type="hidden" id="method" name="method" value="">
+								</dd>
+								<dd class="city-r">
+									<img src="assets/images/icon_next@2x.png" alt="">
+								</dd>
+							</div>
+						</li>
+						<li class="clearfix">
+							<div class="clearfix info-block">
+								<dd class="con-title">学校全称</dd>
+								<dd class="input-box"><input type="text" id="school" name="school" placeholder="请输入学校名称"></dd>
+							</div>
+						</li>
+						<li class="clearfix">
+							<div class="clearfix info-block">
+								<dd class="con-title">专业名称</dd>
+								<dd class="input-box"><input type="text" id="specialty" name="specialty " placeholder="请输入专业名称"></dd>
+							</div>
+						</li>
+						<li class="clearfix">
+							<div class="clearfix info-block">
+								<dd class="con-title">入学时间</dd>
+								<dd class="input-box">
+									<input type="text" name="admissionTime" id="admissionTime" placeholder="请选择入学时间（年 - 月）" readonly="readonly">
+								</dd>
+								<dd class="city-r">
+									<img src="assets/images/icon_calendar@2x.png" alt="">
+								</dd>
+							</div>
+						</li>
+						<li class="clearfix">
+							<div class="clearfix info-block">
+								<dd class="con-title">毕业时间</dd>
+								<dd class="input-box">
+									<input type="text" name="graduationTime" id="graduationTime" placeholder="请选择毕业时间（年 - 月）" readonly="readonly">
+								</dd>
+								<dd class="city-r">
+									<img src="assets/images/icon_calendar@2x.png" alt="">
+								</dd>
+							</div>
+						</li>
+					</ul>
+					<p class="msg-word">
+						*请如实填写您的信息,填写虚假信息将导致您的申请会直接不通过
+					</p>
+					<button type="submit">
+						确定
+					</button>
+				</form>
+				
+			</div>
+			
+		</div>
+
+	</div>
+	
+	<script src="assets/js/jquery-2.1.4.min.js"></script>
+	<script src="assets/js/base.js"></script>
+	<script src="assets/js/baseApp.js"></script>
+	<script src="assets/js/datePicker.js"></script>
+	<script>
+
+		$.ajax({
+			"url": "/restful/educationalByCustomerId",
+			"type": "GET",
+			"dataType": "json",
+			"headers": { "authorization": localStorage.getItem("auth_token") },
+			"success": function (data) {
+				console.log("kkk",data);
+				$("#educational").val(data.educational);
+				$("#method").val(data.method);
+				$("#school").val(data.school);
+				$("#specialty").val(data.specialty);
+				$("#admissionTime").val(M.tool.fullTimeStr(data.admissionTime));
+				$("#graduationTime").val(M.tool.fullTimeStr(data.graduationTime));
+				$("#educational").siblings("p").text(data.educational);
+				$("#method").siblings("p").text(data.method);
+			},
+
+		})
+		var calendar = new datePicker();
+		calendar.init({
+		    'trigger': '#admissionTime', /*按钮选择器，用于触发弹出插件*/
+		    'type': 'date',/*模式：date日期；datetime日期时间；time时间；ym年月；*/
+		    'minDate':'1900-1-1',/*最小日期*/
+		    'maxDate':'2100-12-31',/*最大日期*/
+		    'onSubmit':function(){/*确认时触发事件*/
+		        var theSelectData=calendar.value;
+		        // $("#admissionTime").val(theSelectData)
+		    },
+		    'onClose':function(){/*取消时触发事件*/
+		    }
+		});
+		var calendar = new datePicker();
+		calendar.init({
+		    'trigger': '#graduationTime', /*按钮选择器，用于触发弹出插件*/
+		    'type': 'date',/*模式：date日期；datetime日期时间；time时间；ym年月；*/
+		    'minDate':'1900-1-1',/*最小日期*/
+		    'maxDate':'2100-12-31',/*最大日期*/
+		    'onSubmit':function(){/*确认时触发事件*/
+		        var theSelectData=calendar.value;
+		        // $("#graduationTime").val(theSelectData)
+		    },
+		    'onClose':function(){/*取消时触发事件*/
+		    }
+		});
+	</script>
+	<script src="assets/js/jquery.form.js"></script>
+	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="assets/js/formvaliate.js"></script>
+</body>
+</html>

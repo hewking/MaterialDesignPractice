@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta content="width=device-width, initial-scale=0.5, maximum-scale=0.5,  user-scalable=0;" name="viewport" />
+    <met5496 name="Keywords" content=""/>
+    <meta name="author" content=""/>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+    <script src="assets/js/flexible.js"></script>
+	<title>验证手机号</title>
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+	<div class="main">
+		<!-- 内容模块 -->
+		<div class="main-body">
+			<!--  验证手机号-->
+			<div class="verify-user verify-phone">
+				<form action="" id="verifyPhone">
+					<input type="hidden" name = "timecode" value="" id="timecode">
+					<input type="hidden">
+					<ul>
+						<li class="">
+							<div class="clearfix info-block">
+								<dd class="icon"><img src="assets/images/icon_phone.png" alt=""></dd>
+								<dd class="con-title">手机号</dd>
+								<dd class="input-box"><input type="text" id="mobilePhone" name="mobilePhone" placeholder="请输入您的手机号" value=""></dd>
+							</div>
+						</li>
+						<li class="clearfix get-code">
+							<div class="clearfix info-block">
+								<dd class="icon"><img src="assets/images/icon_vetification.png" alt=""></dd>
+								<dd class="con-title">图形验证码</dd>
+								<dd class="input-box"><input type="text" id="piccode" name="piccode" placeholder="请输入验证码" class="w200" value=""></dd>
+								<dd class="imgcode">
+									<img src="" alt="">
+								</dd>
+							</div>
+							
+						</li>
+						<li class="clearfix get-code">
+							<div class="clearfix info-block">
+								<dd class="icon"><img src="assets/images/icon_vetification.png" alt=""></dd>
+								<dd class="con-title">短信验证码</dd>
+								<dd class="input-box"><input type="text" id="validateCode" name="validateCode" placeholder="请输入您收到的验证码" class="w200" value=""></dd>
+								<dd>
+									<button class="" id="name-code">获取验证码</button>
+								</dd>
+							</div>
+							
+						</li>
+					</ul>
+					<p class="msg-word">
+						*手机号是您接收贷款进度和审核结果的重要途径,并将此账号设定为您的登录账号
+					</p>
+					<button type="submit" class="hh">
+						确定
+					</button>
+				</form>
+				
+			</div>
+			
+			
+		</div>
+		
+		
+	</div>
+	
+	
+	<script src="assets/js/jquery-2.1.4.min.js"></script>
+	<script src="assets/js/base.js"></script>
+	<script src="assets/js/baseApp.js"></script>
+	<script src="assets/js/jquery.form.js"></script>
+	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="assets/js/formvaliate.js"></script>
+</body>
+</html>

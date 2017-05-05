@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta content="width=device-width, initial-scale=0.5, maximum-scale=0.5,  user-scalable=0;" name="viewport" />
+    <met5496 name="Keywords" content=""/>
+    <meta name="author" content=""/>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+   	<script src="assets/js/flexible.js"></script>
+	<title>证件上传</title>
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+	<div class="main">
+		<!-- 内容模块 -->
+		<div class="main-body">
+			<!-- 证件上传 -->
+			<div class="verify-user certificates">
+				<form action="" id="Certificatesform">
+					<ul class="clearfix">
+						<li class="one positive">
+							<div class="upload-btn">
+								<input type="file" id="facade_imange" name="facadepic">
+								
+								<img src="assets/images/btn_addpic.png" alt="">
+							</div>
+							<span>身份证正面</span>
+						</li>
+						<li class="two otherPic">
+							
+							<div class="upload-btn">
+								<input type="file" id="negative_image" name="negativepic">
+								
+								<img src="assets/images/btn_addpic.png" alt="">
+							</div>
+							<input type="hidden" name="negative_image" value="">
+							<span>身份证反面</span>
+						</li>
+						<li class="there handimg">
+							<div class="upload-btn">
+								<input type="file" id="hand_image" name="handpic">
+								
+								<img src="assets/images/btn_addpic.png" alt="">
+							</div>
+							<input type="hidden" name="hand_image" value="">
+							<span>手持身份证反面和培训借款声明</span>
+						</li>
+					</ul>
+					
+					<p class="msg-word">
+						*您所上传的证件仅用于身份信息
+					</p>
+					<div class="sample">
+						<div class="sample-top"><span>示例图片</span></div>
+						<div class="sample-con">
+							<div class="sample-list">
+								<h4>身份证正面</h4>
+								<div class="samplay-pic">
+									<img src="assets/images/pic1@2x.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="sample-con">
+							<div class="sample-list">
+								<h4>身份证反面</h4>
+								<div class="samplay-pic">
+									<img src="assets/images/pic2@2x.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="sample-con">
+							<div class="sample-list">
+								<h4>手持身份证反面和培训借款声明</h4>
+								<div class="samplay-pic">
+									<img src="assets/images/pic3@2x.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+					<button type="submit">
+						确定
+					</button>
+				</form>
+				
+			</div>
+		</div>
+
+	</div>
+	<script src="assets/js/jquery-2.1.4.min.js"></script>
+	<script src="assets/js/base.js"></script>
+	<script src="assets/js/baseApp.js"></script>
+	<script src="assets/js/jquery.form.js"></script>
+	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="assets/js/formvaliate.js"></script>
+</body>
+</html>

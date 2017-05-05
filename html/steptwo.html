@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta content="width=device-width, initial-scale=0.5, maximum-scale=0.5,  user-scalable=0;" name="viewport" />
+    <met5496 name="Keywords" content=""/>
+    <meta name="author" content=""/>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+    <script src="assets/js/flexible.js"></script>
+	<title>实名认证</title>
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+	<div class="main">
+		<!-- 内容模块 -->
+		<div class="main-body">
+			<!-- 实名认证 -->
+			<div class="verify-user verify-name">
+				<form action="" id="verifyname">
+					<input type="hidden" id="token" name = "token" value="">
+					<ul>
+						<li class="clearfix">
+							<div class="clearfix info-block">
+								<dd class="icon"><img src="assets/images/icon_name.png" alt=""></dd>
+								<dd class="con-title">姓名</dd>
+								<dd class="input-box"><input type="text" id="real_name" name="real_name" placeholder="请输入您的真实姓名" value=""></dd>
+							</div>
+						</li>
+						<li class="clearfix">
+							<div class="clearfix info-block">
+								<dd class="icon"><img src="assets/images/icon_shenfenzheng.png" alt=""></dd>
+								<dd class="con-title">身份证号码</dd>
+								<dd class="input-box"><input type="text" id="card_number" name="card_number" placeholder="请输入您的身份证号码" value=""></dd>
+							</div>
+						</li>
+					</ul>
+					<p class="msg-word">
+						*所有上传的证件信息仅用于验证您本人身份,请放心
+					</p>
+					<button type="submit">
+						确定
+					</button>
+				</form>
+				
+			</div>
+		</div>
+
+	</div>
+	<script src="assets/js/jquery-2.1.4.min.js"></script>
+	<script src="assets/js/base.js"></script>
+	<script src="assets/js/baseApp.js"></script>
+	<script src="assets/js/jquery.form.js"></script>
+	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="assets/js/formvaliate.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$(function() {
+				$.ajax({
+					"url": "/restful/searchCustomer",
+					"type": "GET",
+					"dataType": "json",
+					"headers": { "authorization": localStorage.getItem("auth_token") },
+					"success": function (data) {
+						$(".user-avack").text(data.realName)
+						$(".file-con").empty();
+						console.log("######",data);
+						$("#real_name").val(data.realName);
+						$("#card_number").val(data.cardNumber);
+					},
+
+				})
+			})
+		})
+	</script>
+</body>
+</html>

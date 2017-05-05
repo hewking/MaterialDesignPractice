@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta content="width=device-width, initial-scale=0.5, maximum-scale=0.5,  user-scalable=0;" name="viewport" />
+    <met5496 name="Keywords" content=""/>
+    <meta name="author" content=""/>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+    <script src="assets/js/flexible.js"></script>
+	<title>index</title>
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+	<script src="assets/js/jquery-2.1.4.min.js"></script>
+	<script>
+		$(function() {
+			var token = localStorage.getItem("auth_token");
+			if(token){
+				$.ajax({
+					"url": "/restful/searchCustomer",
+					"type": "GET",
+					"dataType": "json",
+					"headers": { "authorization": localStorage.getItem("auth_token") },
+					success:function(data){
+						var step = data.step;
+						if (step == "0") {
+							window.location.href="/steptwo.html";
+						}else if(step == "1"){
+							window.location.href="/stepthere.html";
+						}else if(step == "2"){
+							window.location.href="/stepfour.html";
+						}else if(step == "3"){
+							window.location.href="/stepfive.html";
+						}else if(step == "4"){
+							window.location.href="/stepsix.html";
+						}else if(step == "5"){
+							window.location.href="/stepseven.html";
+						}else if(step == "6"){
+							window.location.href="/myprofile.html";
+						}
+					}
+				})
+			}else{
+				window.location.href="/reg.html";
+			}
+		})
+	</script>
+</body>
+</html>
